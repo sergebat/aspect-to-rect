@@ -53,6 +53,17 @@ describe('aspect-to-rect', function() {
         }), {width: 300, height: 400});
     });
 
+    it('should support returning result via last parameter', function() {
+        var result = {};
+        var r = aspectToRect(500, {
+            width: 300,
+            height: 400
+        }, result);
+        assert.equal(result, r);
+        assert.deepEqual(result, {width: 300, height: 400});
+    });
+
+
 
     it('should support two options - horizontal and vertical', function() {
         assert.deepEqual(aspectToRect(1280/1920, [{
