@@ -1,5 +1,9 @@
 module.exports = function aspectToRect(aspectRatio, options, result) {
     var r = result || {width: 0, height: 0};
+    if (aspectRatio <= 0) {
+        r.width = r.height = 0;
+        return r;
+    }
 
     singleAspectToRect(aspectRatio, options, r);
 
