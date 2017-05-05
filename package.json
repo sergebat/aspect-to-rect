@@ -9,6 +9,12 @@
   },
   "author": "Sergey Batishchev",
   "license": "MIT",
+  "keywords": ["aspect", "rectangle", "resize", "layout", "canvas", "resolution"],
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/sergebat/aspect-to-rect.git"
+  },
   "devDependencies": {
     "beefy": "^2.1.8",
     "browserify": "^14.3.0",
