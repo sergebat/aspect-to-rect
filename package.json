@@ -1,0 +1,14 @@
+{
+  "name": "aspect-to-rect",
+  "version": "0.0.1",
+  "description": "Find rectangle as close as possible to the desired aspect ratio within provided constraints",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "author": "Sergey Batishchev",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^3.3.0"
+  }
+}
