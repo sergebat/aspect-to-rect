@@ -38,6 +38,8 @@ describe('aspect-to-rect', function() {
             height: 640
         }), {width: 832, height: 640});
     });
+
+
     it('should not fail on zero aspect ratio', function() {
         assert.deepEqual(aspectToRect(0, {
             width: {min: 500, max: 100},
@@ -50,5 +52,24 @@ describe('aspect-to-rect', function() {
             height: 400
         }), {width: 300, height: 400});
     });
+
+
+    it('should support two options - horizontal and vertical', function() {
+        assert.deepEqual(aspectToRect(1280/1920, [{
+            width: 640,
+            height: {min: 832, max: 1136}
+        }, {
+            width: {min: 900, max: 1136},
+            height: 640
+        }]), {width: 640, height: 960});
+        assert.deepEqual(aspectToRect(1920/1280, [{
+            width: 640,
+            height: {min: 832, max: 1136}
+        }, {
+            width: {min: 1000, max: 1136},
+            height: 640
+        }]), {width: 1000, height: 640});
+    });
+
 
 });

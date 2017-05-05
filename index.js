@@ -5,7 +5,23 @@ module.exports = function aspectToRect(aspectRatio, options, result) {
         return r;
     }
 
-    singleAspectToRect(aspectRatio, options, r);
+    if (Array.isArray(options)) {
+        var bestW = 0, bestH = 0, bestDistance = Number.MAX_VALUE;
+        for (var i = 0; i < options.length; ++i) {
+            singleAspectToRect(aspectRatio, options[i], r);
+            var newDistance = Math.abs(r.width / r.height - aspectRatio);
+            if (newDistance < bestDistance) {
+                bestW = r.width;
+                bestH = r.height;
+                bestDistance = newDistance;
+            }
+        }
+        r.width = bestW;
+        r.height = bestH;
+    }
+    else {
+        singleAspectToRect(aspectRatio, options, r);
+    }
 
     return r;
 };
