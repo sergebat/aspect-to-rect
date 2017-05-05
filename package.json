@@ -4,11 +4,15 @@
   "description": "Find rectangle as close as possible to the desired aspect ratio within provided constraints",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "./node_modules/.bin/mocha",
+    "demo": "./node_modules/.bin/beefy demo.js"
   },
   "author": "Sergey Batishchev",
   "license": "MIT",
   "devDependencies": {
+    "beefy": "^2.1.8",
+    "browserify": "^14.3.0",
+    "fit-rect": "^1.0.2",
     "mocha": "^3.3.0"
   }
 }
